@@ -22,7 +22,8 @@ class StoreWineRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|unique:wine',
+            'description' => 'required'
         ];
     }
 }

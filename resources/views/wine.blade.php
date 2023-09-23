@@ -1,8 +1,26 @@
-@extends('layouts/app')
+@extends('layouts.app')
 
 @section('title', 'De Coninck - Wine')
 
 @section('content')
-    <h1>Wine page</h1>
-    <p>Some nice and useful content</p>
+    <div class="container">
+        <table>
+            <th>Nom</th>
+            <th>Année</th>
+            <th>Prix</th>
+            <th>Cépage</th>
+            <th>Couleur</th>
+        @foreach ($wines as $wine)
+        <tr>
+           <td> {{ $wine->name }} </td>
+           <td> {{ $wine->year }} </td>
+           <td> {{ $wine->price }}€</td>
+           <td> {{ $wine->grape->name }}</td>
+           <td> {{ $wine->type->name }}</td>
+        <tr>
+        @endforeach
+        <table>
+    </div>
+
+    {{ $wines->links() }}
 @endsection

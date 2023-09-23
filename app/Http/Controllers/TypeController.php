@@ -23,7 +23,6 @@ class TypeController extends Controller
     {
         return Type::create([
             'name' => $data['name'],
-            'description' => $data['description'],
         ]);
     }
 

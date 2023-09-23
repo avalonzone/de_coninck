@@ -14,6 +14,7 @@ class GrapeSeeder extends Seeder
      */
     public function run(): void
     {
+        // 48 = Number of grape in table, this ensure FK are correct
         Grape::factory()
             ->count(48)
             ->create();

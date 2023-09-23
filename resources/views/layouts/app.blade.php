@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description=" content="IFOPLUS - Dynamic Project" />
         <meta name="author" content="Philip Tomson" />
+
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <title>@yield('title')</title>
 
         <!-- BEGIN SCRIPT REGION !-->
@@ -13,19 +17,24 @@
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous" defer>
         </script>
+        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
+        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js" defer></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
         <!-- END SCRIPT REGION !-->
 
         <!-- BEGIN STYLE REGION !-->
-        <link href="" rel="preconnect" /> <!-- Only for critical assets !-->
+        <!-- <link href="" rel="preconnect" /> Only for critical assets !-->
         <link href="https://cdn.jsdelivr.net" rel="dns-prefetch" /> <!-- DNS name resolve (DNS cache) !-->
-        <link href="" rel="prefetch" /> <!-- low priority download, not sure to be loaded !-->
-        <link href="" rel="preload" /> <!-- Forced and prioritized download !-->
+        <!-- <link href="" rel="prefetch" /> low priority download, not sure to be loaded !-->
+        <!--<link href="" rel="preload" />  Forced and prioritized download !-->
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
               rel="stylesheet"
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
               crossorigin="anonymous"
         />
+        <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 
         <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet" /> !-->
         <!-- END STYLE REGION !-->
@@ -52,11 +61,14 @@
                       <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
                       </li>
+                      <!-- Conditional Administration Menu & Sub Menu!-->
                     </ul>
+                    <!--
                     <form class="d-flex">
                       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                       <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
+                    !-->
                   </div>
                 </div>
             </nav>

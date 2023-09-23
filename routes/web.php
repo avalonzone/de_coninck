@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Wine;
+use App\Models\Grape;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,12 +19,15 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+
 Route::get('/wine', function () {
-    return view('wine');
+    $wines = Wine::paginate(15);
+    return view('wine', ["wines" => $wines]);
 })->name('wine');
 
 Route::get('/grape', function () {
-    return view('grape');
+    $grapes = Grape::paginate(15);
+    return view('grape', ["grapes" => $grapes]);
 })->name('grape');
 
 Route::get('/contact', function () {

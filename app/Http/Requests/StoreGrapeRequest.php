@@ -22,7 +22,8 @@ class StoreGrapeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|unique:grape',
+            'description' => 'required'
         ];
     }
 }

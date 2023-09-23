@@ -1,8 +1,18 @@
-@extends('layouts/app')
+@extends('layouts.app')
 
 @section('title', 'De Coninck - Grape')
 
 @section('content')
-    <h1>Grape page</h1>
-    <p>Some nice and useful content</p>
+<div class="container">
+    <table>
+        <th>Nom</th>
+    @foreach ($grapes as $grape)
+    <tr>
+       <td> {{ $grape->name }} </td>
+    <tr>
+    @endforeach
+    <table>
+</div>
+
+{{ $grapes->links() }}
 @endsection

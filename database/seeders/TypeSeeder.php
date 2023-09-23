@@ -13,6 +13,7 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
+        // 20 = Number of grape in table, this ensure FK are correct
         Type::factory()
             ->count(20)
             ->create();
