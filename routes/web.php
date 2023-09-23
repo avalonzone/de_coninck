@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Wine;
 use App\Models\Grape;
+use App\Models\Message;
+use App\Http\Controllers\WineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,9 @@ use App\Models\Grape;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::resource('wines', WineController::class);
+
 
 Route::get('/', function () {
     return view('home');
@@ -33,3 +38,8 @@ Route::get('/grape', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('message', function () {
+    $messages = Message::paginate(15);
+    return view('message', ['messages' => $messages]);
+})->name('message');

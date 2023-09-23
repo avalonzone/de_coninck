@@ -13,7 +13,7 @@ class WinePolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class WinePolicy
      */
     public function view(User $user, wine $wine): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class WinePolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class WinePolicy
      */
     public function update(User $user, wine $wine): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -45,7 +45,7 @@ class WinePolicy
      */
     public function delete(User $user, wine $wine): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class WinePolicy
      */
     public function restore(User $user, wine $wine): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -61,6 +61,6 @@ class WinePolicy
      */
     public function forceDelete(User $user, wine $wine): bool
     {
-        //
+        return true;
     }
 }

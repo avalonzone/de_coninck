@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container">
-    <table>
+    <table class="table table-bordered">
         <th>Nom</th>
     @foreach ($grapes as $grape)
     <tr>
