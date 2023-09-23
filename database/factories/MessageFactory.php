@@ -19,7 +19,7 @@ class MessageFactory extends Factory
         return [
             'name' => fake()->unique()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'phone' => "+32/" . fake()->unique()->numerify('##.##.##'),
+            'phone' => "+32 4" . fake()->unique()->numerify('##/##.##.##'),
             'message' => fake()->text(255),
         ];
     }

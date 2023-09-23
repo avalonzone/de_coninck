@@ -5,12 +5,18 @@
 @section('content')
 <div class="container">
     <table class="table table-bordered">
-        <th>Nom</th>
-    @foreach ($grapes as $grape)
-    <tr>
-       <td> {{ $grape->name }} </td>
-    <tr>
-    @endforeach
+        <thead>
+            <th>Nom</th>
+        </thead>
+        <tbody>
+            @foreach ($grapes as $grape)
+            <tr>
+            <td> {{ $grape->name }} </td>
+            </tr>
+            @endforeach
+        </tbody>
+        <tfoot>
+        </tfoot>
     <table>
 </div>
 
