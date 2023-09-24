@@ -13,6 +13,11 @@
             </div>
             <div class="card-body">
                 <div class="row gy-3">
+                    @if(request()->routeIs('wines.edit'))
+                    <div class='col-12'>
+                        <input type="file" class="form-control" id="inputGroupFileId" aria-describedby="inputGroupFileUploadId" aria-label="Ajouter image">
+                    </div>
+                    @endif
                     <div class='col-10'>
                         <label for="inputWineNameId" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="inputWineNameId" placeholder="Nom du vin ?" name="name" value="{{ $wine->name }}" {{ request()->routeIs('wines.show') ? 'disabled' : '' }}/>
@@ -45,16 +50,9 @@
                         <label for="inputWinePriceId" class="form-label">Prix</label>
                         <input type="text" class="form-control" id="inputWinePriceId" placeholder="Prix ?" name="price" value="{{ $wine->price }}" {{ request()->routeIs('wines.show') ? 'disabled' : '' }}/>
                     </div>
-                    @if(request()->routeIs('wines.edit'))
-                    <div class='col-12'>
-                        <!--
-                        <input type="file" class="form-control" id="inputGroupFileId" aria-describedby="inputGroupFileUploadId" aria-label="Ajouter image">
-                        !-->
-                    </div>
-                    @endif
                     <div class='col-12'>
                         <label for="textAreaWineDescriptionId" class="form-label">Description</label>
-                        <textarea class="form-control" id="textAreaWineDescriptionId" rows="3" name="description" {{ request()->routeIs('wines.show') ? 'disabled' : '' }}>{{ $wine->description }}</textarea>
+                        <textarea class="form-control" id="textAreaWineDescriptionId"  placeholder="Description ?" rows="3" name="description" {{ request()->routeIs('wines.show') ? 'disabled' : '' }}>{{ $wine->description }}</textarea>
                     </div>
                 </div>
             </div>

@@ -13,7 +13,9 @@ class MessageController extends Controller
      */
     public function index()
     {
-        //
+        $messages = Message::paginate(15);
+        return view('messages.index', compact('messages'))
+                ->with('i', (request()->input('page', 1) - 1) * 15);
     }
 
     /**
@@ -37,7 +39,7 @@ class MessageController extends Controller
      */
     public function show(message $message)
     {
-        //
+        return view('messages.show', compact('message'));
     }
 
     /**

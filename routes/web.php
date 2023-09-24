@@ -5,6 +5,7 @@ use App\Models\Wine;
 use App\Models\Grape;
 use App\Models\Message;
 use App\Http\Controllers\WineController;
+use App\Http\Controllers\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use App\Http\Controllers\WineController;
 */
 
 Route::resource('wines', WineController::class);
-
+Route::resource('messages', MessageController::class);
 
 Route::get('/', function () {
     return view('home');
