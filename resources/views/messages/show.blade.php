@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'De Coninck - Message')
+@section('title', 'De Coninck - Consulter un message')
 
 @section('content')
 <div class="container">
     <div class="card">
         <div class="card-header">
-            Message de
+            Message de : <strong>{{ $message->name }}</strong>
         </div>
         <div class="card-body">
         </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'De Coninck - Message')
+@section('title', 'De Coninck - Consulter la liste des messages')
 
 @section('content')
 <div class="container">

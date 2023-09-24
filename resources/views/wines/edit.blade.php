@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'De Coninck - Grape')
+@section('title', 'De Coninck - Modifier un vin')
 
 @section('content')
 

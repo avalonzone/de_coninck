@@ -7,9 +7,9 @@
         <div class="card">
             <div class="card-header">
                 @if (request()->routeIs('wines.edit'))
-                <b>Modifier : </b>
+                Modifier :
                 @endif
-                {{ $wine->name }} - {{ $wine->year }}
+                <strong>{{ $wine->name }} ({{ $wine->year }})</strong>
             </div>
             <div class="card-body">
                 <div class="row gy-3">
