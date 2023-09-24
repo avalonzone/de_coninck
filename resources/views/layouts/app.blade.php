@@ -5,6 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description=" content="IFOPLUS - Dynamic Project" />
         <meta name="author" content="Philip Tomson" />
+        <link rel="icon" href="{{ route('home') }}/images/cropped-LOGO_BG_BLACK_BIG-e1608048104767-32x32.png" sizes="32x32">
+        <link rel="icon" href="{{ route('home') }}/images/cropped-LOGO_BG_BLACK_BIG-e1608048104767-192x192.png" sizes="192x192">
+        <link rel="apple-touch-icon" href="{{ route('home') }}/images/cropped-LOGO_BG_BLACK_BIG-e1608048104767-180x180.png">
+        <meta name="msapplication-TileImage" content="{{ route('home') }}/images/cropped-LOGO_BG_BLACK_BIG-e1608048104767-270x270.png">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
