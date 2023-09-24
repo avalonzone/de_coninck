@@ -63,10 +63,25 @@
                       <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" aria-current="page" href="{{ route('contact') }}">Contact</a>
                       </li>
-                      <!-- Conditional Administration Menu & Sub Menu!-->
+                      @auth
                       <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('auth.login') ? 'active' : '' }}" aria-current="page" href="{{ route('auth.login') }}">Contact</a>
+                        <a class="nav-link {{ request()->routeIs('wines.index') ? 'active' : '' }}" aria-current="page" href="{{ route('wines.index') }}">Vins</a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('messages.index') ? 'active' : '' }}" aria-current="page" href="{{ route('messages.index') }}">Messages</a>
+                      </li>
+                      @endauth
+                      <!-- Conditional Administration Menu & Sub Menu!-->
+
+                      @guest
+                      <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('login') ? 'active' : '' }}" aria-current="page" href="{{ route('login') }}">Connexion</a>
+                      </li>
+                      @else
+                      <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('logout') ? 'active' : '' }}" aria-current="page" href="{{ route('logout') }}">Déconnexion</a>
+                      </li>
+                      @endguest
 
                     </ul>
                     <!--

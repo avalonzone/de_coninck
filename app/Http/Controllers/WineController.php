@@ -5,12 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Grape;
 use App\Models\Wine;
 use App\Models\Type;
+
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+
 class WineController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except([]);
+    }
     /**
      * Display a listing of the resource.
      */

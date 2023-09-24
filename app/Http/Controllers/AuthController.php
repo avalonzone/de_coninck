@@ -43,27 +43,13 @@ class AuthController extends Controller
         ])->onlyInput('email');
     }
 
-
     public function logout(Request $request) : RedirectResponse
     {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('login')
-            ->withSuccess('You have logged out successfully!');
+        return redirect()->route('home')
+            ->withSuccess('Vous êtes maintenant déconnecté');
     }
 
-    public function adminboard() : View
-    {
-        // To Implement on the wines and messages classes to prevent access
-        if(Auth::check())
-        {
-            return view('auth.adminboard');
-        }
-
-        return redirect()->route('login')
-            ->withErrors([
-            'email' => 'Please login to access the dashboard.',
-        ])->onlyInput('email');
-    }
 }

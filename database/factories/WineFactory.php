@@ -22,7 +22,6 @@ class WineFactory extends Factory
             'description' => fake()->text(96),
             'comment' => fake()->text(32),
             'source' => 'default-wine-150.png',
-            //'source' => fake()->url(),
             'year' => fake()->year(),
             'grape_id' => random_int(1,48),
             'type_id' => random_int(1,20),

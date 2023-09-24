@@ -7,6 +7,7 @@ use App\Models\Message;
 use App\Http\Controllers\WineController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,8 @@ use App\Http\Controllers\AuthController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
 Route::resource('wines', WineController::class);
 Route::resource('messages', MessageController::class);
-//Route::resource('auth', AuthController::class);
 
 Route::get('/', function () {
     return view('home');
@@ -29,11 +28,10 @@ Route::get('/', function () {
 
 
 Route::controller(AuthController::class)->group(function() {
-    Route::get('/login', 'login')->name('login');
-    Route::post('/authenticate', 'authenticate')->name('authenticate');
-    Route::post('/logout', 'logout')->name('logout');
+    Route::get('login', 'login')->name('login');
+    Route::get('logout', 'logout')->name('logout');
+    Route::post('authenticate', 'authenticate')->name('authenticate');
 });
-
 
 Route::get('/wine', function () {
     $wines = Wine::paginate(15);
@@ -48,3 +46,7 @@ Route::get('/grape', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::any('{any}', function() {
+    abort(404);
+})->where('any', '.*');
