@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorewineRequest;
-use App\Http\Requests\UpdatewineRequest;
+use App\Models\Grape;
 use App\Models\Wine;
+use App\Models\Type;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
-
+use Illuminate\Http\Request;
 class WineController extends Controller
 {
     /**
@@ -50,7 +50,7 @@ class WineController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreWineRequest $request) : RedirectResponse
+    public function store(Request $request) : RedirectResponse
     {
         $request->validate([
             'name' => 'required',
@@ -68,7 +68,9 @@ class WineController extends Controller
      */
     public function show(Wine $wine) : View
     {
-        return view('wines.show', compact('wine'));
+        $grapes = Grape::all();
+        $types = Type::all();
+        return view('wines.show', compact('wine', 'grapes', 'types'));
     }
 
     /**
@@ -76,19 +78,22 @@ class WineController extends Controller
      */
     public function edit(Wine $wine) : View
     {
-        return view('wines.edit', compact('wine'));
+        $grapes = Grape::all();
+        $types = Type::all();
+        return view('wines.edit', compact('wine', 'grapes', 'types'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateWineRequest $request, Wine $wine) : RedirectResponse
+    public function update(Request $request, Wine $wine) : RedirectResponse
     {
         $request->validate([
-            'description' => 'required',
+            'name' => 'required',
             'year' => 'required',
             'grape' => 'required',
             'type' => 'required',
+            'description' => 'required',
         ]);
 
         $wine->update($request->all());

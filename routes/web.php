@@ -24,7 +24,6 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-
 Route::get('/wine', function () {
     $wines = Wine::paginate(15);
     return view('wine', ["wines" => $wines]);
