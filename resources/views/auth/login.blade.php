@@ -13,7 +13,7 @@
                     <strong>Connexion</strong>
                 </div>
                 <div class="card-body">
-                    <div class="row">
+                    <div class="row gy-3">
                         <div class='col-12'>
                             <label for="inputEmailId" class="form-label">Identifiant</label>
                             <input type="text" class="form-control" id="inputEmailId" placeholder="Entrez votre identifiant" name="email"/>

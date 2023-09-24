@@ -13,6 +13,9 @@
             </div>
             <div class="card-body">
                 <div class="row gy-3">
+                    <div class='col-12'>
+                        <img src="{{ route('home') }}/images/default-wine-150.png" alt="" height="150px"/>
+                    </div>
                     @if(request()->routeIs('wines.edit'))
                     <div class='col-12'>
                         <input type="file" class="form-control" id="inputGroupFileId" aria-describedby="inputGroupFileUploadId" aria-label="Ajouter image">

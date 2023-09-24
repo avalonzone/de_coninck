@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Wine;
 use App\Models\Grape;
-use App\Models\Message;
+
 use App\Http\Controllers\WineController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\AuthController;
-use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +25,6 @@ Route::resource('messages', MessageController::class);
 Route::get('/', function () {
     return view('home');
 })->name('home');
-
 
 Route::controller(AuthController::class)->group(function() {
     Route::get('login', 'login')->name('login');
