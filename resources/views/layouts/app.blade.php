@@ -64,9 +64,7 @@
                         <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" aria-current="page" href="{{ route('contact') }}">Contact</a>
                       </li>
                       <!-- Conditional Administration Menu & Sub Menu!-->
-                      <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('message') ? 'active' : '' }}" aria-current="page" href="{{ route('message') }}">Message</a>
-                      </li>
+
                     </ul>
                     <!--
                     <form class="d-flex">

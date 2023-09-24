@@ -20,11 +20,11 @@
                 <tbody>
                     @foreach ($messages as $message)
                     <tr>
-                        <td> {{ $message->name }} </td>
-                        <td> {{ $message->email }} </td>
-                        <td> {{ $message->phone }} </td>
-                        <td> {{ substr($message->message, 0 , 50) }} ...</td>
-                        <td>
+                        <td class="align-middle"> {{ $message->name }} </td>
+                        <td class="align-middle"> {{ $message->email }} </td>
+                        <td class="align-middle"> {{ $message->phone }} </td>
+                        <td class="align-middle"> {{ substr($message->message, 0 , 50) }} ...</td>
+                        <td class="align-middle text-center">
                             <a class="btn btn-secondary btn-sm" href="{{ route('messages.show', $message->id) }}">Lire</a>
                         </td>
                     </tr>

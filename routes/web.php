@@ -38,8 +38,3 @@ Route::get('/grape', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
-
-Route::get('message', function () {
-    $messages = Message::paginate(15);
-    return view('message', ['messages' => $messages]);
-})->name('message');

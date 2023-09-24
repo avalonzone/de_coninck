@@ -11,6 +11,7 @@
         <div class="card-body">
             <table class="table table-bordered">
                 <thead>
+                    <th></th>
                     <th>Nom</th>
                     <th>Année</th>
                     <th>Prix</th>
@@ -21,12 +22,20 @@
                 <tbody>
                     @foreach ($wines as $wine)
                     <tr>
-                    <td> {{ $wine->name }} </td>
-                    <td> {{ $wine->year }} </td>
-                    <td> {{ $wine->price }}€</td>
-                    <td> {{ $wine->grape->name }}</td>
-                    <td> {{ $wine->type->name }}</td>
-                    <td>
+                    <td class="align-middle text-center">
+                        @if ($wine->source !== "default-wine-150.png")
+                            <!-- To Edit !-->
+                            <img src="storage/{{$wine->source}}" alt="" height="50px"/>
+                        @else
+                            <img src="{{ route('home') }}/images/default-wine-150.png" alt="" height="50px"/>
+                        @endif
+                    </td>
+                    <td class="align-middle" > {{ $wine->name }} </td>
+                    <td class="align-middle"> {{ $wine->year }} </td>
+                    <td class="align-middle"> {{ $wine->price }}€</td>
+                    <td class="align-middle"> {{ $wine->grape->name }}</td>
+                    <td class="align-middle"> {{ $wine->type->name }}</td>
+                    <td class="align-middle">
                             <form action="{{ route('wines.destroy', $wine->id )}}" method="POST">
                                 <a class="btn btn-secondary btn-sm" href="{{ route('wines.show', $wine->id) }}">Voir</a>
                                 <a class="btn btn-secondary btn-sm " href="{{ route('wines.edit', $wine->id) }}">Modifier</a>
