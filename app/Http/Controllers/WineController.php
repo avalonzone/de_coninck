@@ -91,8 +91,10 @@ class WineController extends Controller
         $request->validate([
             'name' => 'required',
             'year' => 'required',
-            'grape' => 'required',
-            'type' => 'required',
+            'price' => 'required',
+            'grape_id' => 'required',
+            'type_id' => 'required',
+            'price' => 'required',
             'description' => 'required',
         ]);
 

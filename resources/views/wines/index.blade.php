@@ -16,7 +16,7 @@
                     <th>Prix</th>
                     <th>Cépage</th>
                     <th>Couleur</th>
-                    <th width="200px">Operation</th>
+                    <th width="200px">Operations</th>
                 </thead>
                 <tbody>
                     @foreach ($wines as $wine)
