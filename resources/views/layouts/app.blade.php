@@ -67,16 +67,20 @@
                       <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" aria-current="page" href="{{ route('contact') }}">Contact</a>
                       </li>
+                      <!-- Conditional Administration Menu & Sub Menu !-->
                       @auth
-                      <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('wines.index') ? 'active' : '' }}" aria-current="page" href="{{ route('wines.index') }}">Vins</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('messages.index') ? 'active' : '' }}" aria-current="page" href="{{ route('messages.index') }}">Messages</a>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{ request()->routeIs('wines.*') || request()->routeIs('messages.*') ? 'active' : '' }}" href="#" data-bs-toggle="dropdown">Administration</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item">
+                                <a class="dropdown-item {{ request()->routeIs('wines.index') ? 'active' : '' }}" aria-current="page" href="{{ route('wines.index') }}">Vins</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-item {{ request()->routeIs('messages.index') ? 'active' : '' }}" aria-current="page" href="{{ route('messages.index') }}">Messages</a>
+                            </li>
+                        </ul>
                       </li>
                       @endauth
-                      <!-- Conditional Administration Menu & Sub Menu!-->
-
                       @guest
                       <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('login') ? 'active' : '' }}" aria-current="page" href="{{ route('login') }}">Connexion</a>
