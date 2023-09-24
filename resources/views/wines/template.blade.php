@@ -58,7 +58,7 @@
             </div>
             <div class="card-footer">
                 <div class="col-3 col-offset-4">
-                    <a class="btn btn-secondary" href="{{ route('wines.index') }}">Annuler</a>
+                    <a class="btn btn-secondary" href="{{ url()->previous() }}">Annuler</a>
                     @if(request()->routeIs('wines.edit'))
                     <button class="btn btn-primary" type="submit">Sauvegarder</button>
                     @endif

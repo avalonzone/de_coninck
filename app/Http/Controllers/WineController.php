@@ -33,18 +33,6 @@ class WineController extends Controller
     protected function create() : view
     {
         return view('wines.create');
-        /*
-        return Wine::create([
-            'name' => $data['name'],
-            'description' => $data['description'],
-            'comment' => $data['comment'],
-            'source' => $data['source'],
-            'year' => $data['year'],
-            'grape_id' => $data['grape_id'],
-            'type_id' => $data['type_id'],
-            'price' => $data['price'],
-        ]);
-        */
     }
 
     /**
@@ -59,7 +47,7 @@ class WineController extends Controller
 
         Wine::create($request->all());
 
-        return redirect()->route('products.index')
+        return redirect()->route('wines.index')
             ->with('success', 'Nouveau vin ajouté avec succès!');
     }
 

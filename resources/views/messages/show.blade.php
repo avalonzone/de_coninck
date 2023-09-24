@@ -21,7 +21,8 @@
             </dl>
         </div>
         <div class="card-footer">
-            <a class="btn btn-secondary" href="{{ route('messages.index') }}">Retour</a>
+
+            <a class="btn btn-secondary" href="{{url()->previous() }}">Retour</a>
         </div>
     </div>
 </div>

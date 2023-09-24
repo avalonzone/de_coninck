@@ -6,6 +6,7 @@ use App\Models\Grape;
 use App\Models\Message;
 use App\Http\Controllers\WineController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,10 +21,19 @@ use App\Http\Controllers\MessageController;
 
 Route::resource('wines', WineController::class);
 Route::resource('messages', MessageController::class);
+//Route::resource('auth', AuthController::class);
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+
+Route::controller(AuthController::class)->group(function() {
+    Route::get('/login', 'login')->name('login');
+    Route::post('/authenticate', 'authenticate')->name('authenticate');
+    Route::post('/logout', 'logout')->name('logout');
+});
+
 
 Route::get('/wine', function () {
     $wines = Wine::paginate(15);

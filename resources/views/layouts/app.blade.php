@@ -64,6 +64,9 @@
                         <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" aria-current="page" href="{{ route('contact') }}">Contact</a>
                       </li>
                       <!-- Conditional Administration Menu & Sub Menu!-->
+                      <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('auth.login') ? 'active' : '' }}" aria-current="page" href="{{ route('auth.login') }}">Contact</a>
+                      </li>
 
                     </ul>
                     <!--
