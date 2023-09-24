@@ -1,4 +1,4 @@
-<div class="container">
+
     @if(request()->routeIs('wines.edit'))
     <form action="{{ route('wines.update', $wine->id) }}" method="POST">
         @csrf
@@ -68,4 +68,4 @@
     @if(request()->routeIs('wines.edit'))
     </form>
     @endif
-<div>
+

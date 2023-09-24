@@ -48,15 +48,12 @@
                     @endforeach
                 </tbody>
                 <tfoot>
-                    <!-- Placeholde Table Footer !-->
                 </tfoot>
-            <table>
+            </table>
         </div>
         <div class="card-footer">
-            <!-- Placeholde Card Footer !-->
+            {{ $wines->links() }}
         </div>
     </div>
 </div>
-
-{{ $wines->links() }}
 @endsection

@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreTypeRequest;
-use App\Http\Requests\UpdateTypeRequest;
+use Illuminate\Http\Request;
 use App\Models\Type;
 
 class TypeController extends Controller
@@ -13,7 +12,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        //Not implemented
     }
 
     /**
@@ -29,9 +28,9 @@ class TypeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTypeRequest $request)
+    public function store(Request $request)
     {
-        //
+        //Not implemented
     }
 
     /**
@@ -39,7 +38,7 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        //
+        //Not implemented
     }
 
     /**
@@ -47,15 +46,15 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        //
+        //Not implemented
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTypeRequest $request, Type $type)
+    public function update(Request $request, Type $type)
     {
-        //
+        //Not implemented
     }
 
     /**
@@ -63,6 +62,6 @@ class TypeController extends Controller
      */
     public function destroy(Type $type)
     {
-        //
+        //Not implemented
     }
 }

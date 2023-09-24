@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreGrapeRequest;
-use App\Http\Requests\UpdateGrapeRequest;
 use App\Models\Grape;
+use Illuminate\Http\Request;
 
 class GrapeController extends Controller
 {
@@ -13,7 +12,7 @@ class GrapeController extends Controller
      */
     public function index()
     {
-        //
+        //Not implemented
     }
 
     /**
@@ -30,9 +29,9 @@ class GrapeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreGrapeRequest $request)
+    public function store(Request $request)
     {
-        //
+        //Not implemented
     }
 
     /**
@@ -40,7 +39,7 @@ class GrapeController extends Controller
      */
     public function show(Grape $grape)
     {
-        //
+        //Not implemented
     }
 
     /**
@@ -48,15 +47,15 @@ class GrapeController extends Controller
      */
     public function edit(Grape $grape)
     {
-        //
+        //Not implemented
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateGrapeRequest $request, Grape $grape)
+    public function update(Request $request, Grape $grape)
     {
-        //
+        //Not implemented
     }
 
     /**
@@ -64,6 +63,6 @@ class GrapeController extends Controller
      */
     public function destroy(Grape $grape)
     {
-        //
+        //Not implemented
     }
 }

@@ -35,9 +35,9 @@
             </table>
         </div>
         <div class="card-footer">
-
+            {{ $messages->links() }}
         </div>
+
     </div>
 </div>
-{{ $messages->links() }}
 @endsection

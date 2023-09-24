@@ -16,6 +16,7 @@ class WineController extends Controller
     {
         $this->middleware('auth')->except([]);
     }
+
     /**
      * Display a listing of the resource.
      */
@@ -27,13 +28,7 @@ class WineController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-     /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\Wine
+     * Show the form for creating a new wine.
      */
     protected function create() : view
     {
@@ -41,7 +36,7 @@ class WineController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created wine in storage.
      */
     public function store(Request $request) : RedirectResponse
     {
@@ -57,7 +52,7 @@ class WineController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified wine.
      */
     public function show(Wine $wine) : View
     {
@@ -67,7 +62,7 @@ class WineController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified wine.
      */
     public function edit(Wine $wine) : View
     {
@@ -77,7 +72,7 @@ class WineController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified wine in storage.
      */
     public function update(Request $request, Wine $wine) : RedirectResponse
     {
@@ -98,7 +93,7 @@ class WineController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified wine from storage.
      */
     public function destroy(Wine $wine) : RedirectResponse
     {

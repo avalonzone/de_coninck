@@ -3,7 +3,6 @@
 @section('title', 'De Coninck - Wine')
 
 @section('content')
-    <div class="container">
         <table class="table table-bordered">
             <thead>
                 <th>Nom</th>
@@ -26,7 +25,5 @@
             <tfoot>
             </tfoot>
         </table>
-    </div>
-
     {{ $wines->links() }}
 @endsection

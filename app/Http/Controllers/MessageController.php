@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoremessageRequest;
-use App\Http\Requests\UpdatemessageRequest;
+use Illuminate\Http\Request;
 use App\Models\Message;
 
 class MessageController extends Controller
@@ -13,7 +12,7 @@ class MessageController extends Controller
         $this->middleware('auth')->except([]);
     }
     /**
-     * Display a listing of the resource.
+     * Display a listing of the message.
      */
     public function index()
     {
@@ -23,23 +22,23 @@ class MessageController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new message.
      */
     public function create()
     {
-        //
+        //Not implemented
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created message in storage.
      */
-    public function store(StoremessageRequest $request)
+    public function store(Request $request)
     {
-        //
+        //Not implemented
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified message.
      */
     public function show(message $message)
     {
@@ -47,26 +46,26 @@ class MessageController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified message.
      */
     public function edit(message $message)
     {
-        //
+        //Not implemented
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified message in storage.
      */
-    public function update(UpdatemessageRequest $request, message $message)
+    public function update(Request $request, message $message)
     {
-        //
+        //Not implemented
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified message from storage.
      */
     public function destroy(message $message)
     {
-        //
+        //Not implemented
     }
 }

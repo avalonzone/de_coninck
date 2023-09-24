@@ -24,15 +24,10 @@
         <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
         <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js" defer></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-
         <!-- END SCRIPT REGION !-->
 
         <!-- BEGIN STYLE REGION !-->
-        <!-- <link href="" rel="preconnect" /> Only for critical assets !-->
         <link href="https://cdn.jsdelivr.net" rel="dns-prefetch" /> <!-- DNS name resolve (DNS cache) !-->
-        <!-- <link href="" rel="prefetch" /> low priority download, not sure to be loaded !-->
-        <!--<link href="" rel="preload" />  Forced and prioritized download !-->
-
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
               rel="stylesheet"
               integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
@@ -73,14 +68,15 @@
                         <a class="nav-link dropdown-toggle {{ request()->routeIs('wines.*') || request()->routeIs('messages.*') ? 'active' : '' }}" href="#" data-bs-toggle="dropdown">Administration</a>
                         <ul class="dropdown-menu">
                             <li class="nav-item">
-                                <a class="dropdown-item {{ request()->routeIs('wines.index') ? 'active' : '' }}" aria-current="page" href="{{ route('wines.index') }}">Vins</a>
+                                <a class="dropdown-item {{ request()->routeIs('wines.*') ? 'active' : '' }}" aria-current="page" href="{{ route('wines.index') }}">Vins</a>
                             </li>
                             <li class="nav-item">
-                                <a class="dropdown-item {{ request()->routeIs('messages.index') ? 'active' : '' }}" aria-current="page" href="{{ route('messages.index') }}">Messages</a>
+                                <a class="dropdown-item {{ request()->routeIs('messages.*') ? 'active' : '' }}" aria-current="page" href="{{ route('messages.index') }}">Messages</a>
                             </li>
                         </ul>
                       </li>
                       @endauth
+                      <!-- Conditional Login & Logout !-->
                       @guest
                       <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('login') ? 'active' : '' }}" aria-current="page" href="{{ route('login') }}">Connexion</a>
@@ -90,14 +86,7 @@
                         <a class="nav-link {{ request()->routeIs('logout') ? 'active' : '' }}" aria-current="page" href="{{ route('logout') }}">Déconnexion</a>
                       </li>
                       @endguest
-
                     </ul>
-                    <!--
-                    <form class="d-flex">
-                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                      <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                    !-->
                   </div>
                 </div>
             </nav>
@@ -112,13 +101,14 @@
             <div class="container">
                 @yield('content')
             </div>
-        <div>
+        </div>
         <!-- END CONTENT REGION !-->
-        <footer class="footer mt-auto py-3 bg-light">
-            <div class="container">
+        <!--
+        <footer class="footer  py-3 bg-light">
+            <div class="row col-12 ">
                 <span class="text-muted">Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})</span>
             </div>
-            @yield('footer')
         </footer>
+        !-->
     </body>
 </html>
