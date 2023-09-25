@@ -9,8 +9,8 @@
 
 ## About This project
 
-We assume that you have setup a suitable environnement to run the LARAVEL 10 application.
-You must be familliar with Linux, APT, Apache, PHP, PHP Artisan, DNS, Mysql/MariaDB, SSH, SSL
+We assume that you have setup a suitable environnement to run the LARAVEL 10 applications.
+You must be familliar with Linux, APT, Apache, PHP, PHP Artisan, DNS, Mysql/MariaDB, SSH, SSL if you plan host this on a dedicated server.
 
 ## The following setup has been created to host the project
 
@@ -23,10 +23,30 @@ You must be familliar with Linux, APT, Apache, PHP, PHP Artisan, DNS, Mysql/Mari
 - SQL Server : MariaDB 10.5.19
 - Firewall : iptables (Open port : 22 (SSH), 443 (HTTPS), 25563-25564 (VSCODE Server Cedric), 25565-25566 (VSCODE Server Philip)
 - Active Protection : Fail2ban
-- Console Access : SSH, Key exchange only, NO password auth
-- HTTPS/SSL: 2x 90 days free certificates (ZeroSSL) for these subdomain : cedric.avalon-zone.be, philip.avalon-zone.be
+- Console Access : SSH, Key exchange only, NO password authentication
+- HTTPS/SSL: 90 days free certificates (ZeroSSL) for these subdomain : cedric.avalon-zone.be, philip.avalon-zone.be
 
-For best results, a similar setup should be set in place to install this project. Of course you might also run this project with a local instance of the Artisan server.
+For best results, a similar setup should be set in place to install the project. Of course you might also run this project within a local instance of the Artisan Server.
+
+## Prerequisites
+
+## Installation
+
+### Duplicate .env.example and rename it to .env
+  
+    APP_USR="<admin_user>"
+    APP_PWD="<admin_password>"
+
+    APP_NAME=DeConinck
+    DB_DATABASE=<database_name>
+    DB_USERNAME=<database_user_name>
+    DB_PASSWORD=<database_user_password>
+
+## Administration & Management
+
+Click ont the connection menu item and use the credentials
+- login : admin@app.com
+- password : 
 
 ## Contributing
 
