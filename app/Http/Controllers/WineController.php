@@ -33,7 +33,9 @@ class WineController extends Controller
      */
     protected function create() : view
     {
-        return view('wines.create');
+        $grapes = Grape::all();
+        $types = Type::all();
+        return view('wines.create', compact('grapes', 'types'));
     }
 
     /**
@@ -43,10 +45,28 @@ class WineController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'detail' => 'required',
+            'year' => 'required',
+            'price' => 'required',
+            'grape_id' => 'required',
+            'type_id' => 'required',
+            'description' => 'required',
         ]);
 
-        Wine::create($request->all());
+        $allRequestDatas = $request->all();
+
+        if ($image = $request->file('source'))
+        {
+            $destinationPath = storage_path('app/public/images/');
+            $wineImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $wineImage);
+            $allRequestDatas['source'] = "$wineImage";
+        }
+        else
+        {
+            $allRequestDatas['source'] = 'default-wine-150.png';
+        }
+
+        Wine::create($allRequestDatas);
 
         return redirect()->route('wines.index')
             ->with('success', 'Nouveau vin ajouté avec succès!');
@@ -83,7 +103,6 @@ class WineController extends Controller
             'price' => 'required',
             'grape_id' => 'required',
             'type_id' => 'required',
-            'price' => 'required',
             'description' => 'required',
         ]);
 

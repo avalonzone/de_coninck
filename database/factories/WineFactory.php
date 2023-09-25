@@ -20,7 +20,6 @@ class WineFactory extends Factory
         return [
             'name' => fake()->wineName(),
             'description' => fake()->text(96),
-            'comment' => fake()->text(32),
             'source' => 'default-wine-150.png',
             'year' => fake()->year(),
             'grape_id' => random_int(1,48),

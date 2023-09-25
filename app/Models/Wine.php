@@ -28,7 +28,6 @@ class Wine extends Model
     protected $fillable = [
         'name',
         'description',
-        'comment',
         'source',
         'year',
         'grape_id',

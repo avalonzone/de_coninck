@@ -20,7 +20,6 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->text('comment');
             $table->string('source');
             $table->integer('year');
             $table->foreignId('grape_id')->constrained();
