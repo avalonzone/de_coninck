@@ -30,23 +30,38 @@ For best results, a similar setup should be set in place to install the project.
 
 ## Prerequisites
 
+- An Apache web server configured with the required modules
+- PHP 8.1+ must be installed and configured with all Laravel prerequisites
+- A database engine like MySQL or MariaDB
+- Composer package management installed
+
 ## Installation
 
-### Duplicate .env.example and rename it to .env
-  
+Download/clone this project into the root of your web server
+
+    git clone https://github.com/avalonzone/de_coninck.git
+
+Navigate into the project directory with the terminal
+
+Duplicate .env.example and rename it to .env
+
+Create the following entries in the .env file
+
     APP_USR="<admin_user>"
     APP_PWD="<admin_password>"
+
+update the following entries in the .enc file
 
     APP_NAME=DeConinck
     DB_DATABASE=<database_name>
     DB_USERNAME=<database_user_name>
     DB_PASSWORD=<database_user_password>
 
-## Administration & Management
+## Administration & Management (https://philip.avalon-zone.be)
 
 Click ont the connection menu item and use the credentials
 - login : admin@app.com
-- password : 
+- password : <sent_by_mail>
 
 ## Contributing
 
