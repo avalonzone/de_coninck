@@ -12,7 +12,7 @@
 We assume that you have setup a suitable environnement to run the LARAVEL 10 applications.
 You must be familliar with Linux, APT, Apache, PHP, PHP Artisan, DNS, Mysql/MariaDB, SSH, SSL if you plan host this on a dedicated server.
 
-## The following setup has been created to host the project
+### The following setup has been created to host the project
 
 - Hardware : Raspberry Pi 4 (4 go)
 - OS : Raspbian/Debian 11 (bullseye)
@@ -28,40 +28,63 @@ You must be familliar with Linux, APT, Apache, PHP, PHP Artisan, DNS, Mysql/Mari
 
 For best results, a similar setup should be set in place to install the project. Of course you might also run this project within a local instance of the Artisan Server.
 
-## Prerequisites
+### Prerequisites
 
 - An Apache web server configured with the required modules
 - PHP 8.1+ must be installed and configured with all Laravel prerequisites
 - A database engine like MySQL or MariaDB
 - Composer package management installed
+- Git installed and configured
 
-## Installation
+### Installation
+
+Create a database to host the tables requiured by the applications and give acces with enoug privilege to a user. The database name, username and password will be used later while configuring the application environnement file.
 
 Download/clone this project into the root of your web server
 
     git clone https://github.com/avalonzone/de_coninck.git
 
-Navigate into the project directory with the terminal
-
 Duplicate .env.example and rename it to .env
 
-Create the following entries in the .env file
+Create the following entries in the .env file, these credential will be used by the database seeder to create the admin user.
 
     APP_USR="<admin_user>"
     APP_PWD="<admin_password>"
 
-update the following entries in the .enc file
+Update the following entries in the .enc file
 
-    APP_NAME=DeConinck
+    APP_NAME=<Choose_a_name>
     DB_DATABASE=<database_name>
     DB_USERNAME=<database_user_name>
     DB_PASSWORD=<database_user_password>
 
-## Administration & Management (https://philip.avalon-zone.be)
+Navigate into the project directory with the terminal
 
-Click ont the connection menu item and use the credentials
-- login : admin@app.com
+Create a symbolink link to give acces to the content of storage from the public application folder
+
+    php artisan storage:link
+
+Create application tables and add content
+
+    php artisan migrate:fresh --seed
+
+If running the app under Apache do not forget to give the right to the user running the web server instance so he has write permission to the storage/ and bootstrap/cache folders.
+
+
+
+### Test of the existing demo instance (https://philip.avalon-zone.be)
+
+Test the application functionnalities as a guest.
+
+Test the application functionnalities as an administrator.
+- login : <sent_by_mail>
 - password : <sent_by_mail>
+
+
+
+
+
+
 
 ## Contributing
 
