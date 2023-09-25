@@ -5,7 +5,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            <strong>NOUS CONTACTER</strong>
+            <strong>Nous Contacter</strong>
         </div>
         <div class="card-body">
             <dl class="row">
