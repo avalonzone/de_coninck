@@ -6,7 +6,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            Message de : <strong>{{ $message->name }}</strong>
+            <strong>Message de : {{ $message->name }}</strong>
         </div>
         <div class="card-body">
             <dl class="row">
