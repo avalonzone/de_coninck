@@ -19,6 +19,7 @@ class UserWineController extends Controller
         $types = Type::all()->toArray();
 
         $completeList = [];
+
         foreach($wines as $wine)
         {
             $grapeIndex = array_search($wine->grape_id, array_column($grapes, 'id'));
@@ -31,7 +32,7 @@ class UserWineController extends Controller
             }
 
             $typeIndex = array_search($wine->type_id, array_column($types, 'id'));
-            if ($grapeIndex !== false) {
+            if ($typeIndex !== false) {
                 $wine->type = $types[$typeIndex]["name"];
             }
             else

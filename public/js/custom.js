@@ -59,6 +59,7 @@ jQuery(document).ready(function () {
         }
       });
 
+      // Initialize Datatable with Ajax loader and get user wine list
       if( $.fn.dataTable.isDataTable('#winesDatatableId'))
       {
          $('#winesDatatableId').DataTable.destroy();
