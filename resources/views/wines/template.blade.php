@@ -15,9 +15,9 @@
                 <div class="row gy-3">
                     <div class='col-12'>
                         @if ($wine->source !== "default-wine-150.png")
-                            <img src="{{ asset('/storage/images/' . $wine->source) }}" alt="" title="Wine bottle" height="150px"/>
+                            <img id="wineImage" src="{{ asset('/storage/images/' . $wine->source) }}" alt="" title="Wine bottle" height="150px"/>
                         @else
-                            <img src="{{ asset('/images/default-wine-150.png') }}"" alt="" title="Wine bottle" height="150px"/>
+                            <img id="wineImage" src="{{ asset('/images/default-wine-150.png') }}"" alt="" title="Wine bottle" height="150px"/>
                         @endif
                     </div>
                     @if(request()->routeIs('wines.edit'))

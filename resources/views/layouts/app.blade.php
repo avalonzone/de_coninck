@@ -25,6 +25,7 @@
         <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
         <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/6.0.0/bootbox.min.js" integrity="sha512-oVbWSv2O4y1UzvExJMHaHcaib4wsBMS5tEP3/YkMP6GmkwRJAa79Jwsv+Y/w7w2Vb/98/Xhvck10LyJweB8Jsw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+        <script src="{{ asset('js/custom.js') }}" defer></script>
         <!-- END SCRIPT REGION !-->
 
         <!-- BEGIN STYLE REGION !-->
@@ -56,9 +57,6 @@
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('wine') ? 'active' : '' }}" aria-current="page" href="{{ route('wine') }}">Vins</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('grape') ? 'active' : '' }}" aria-current="page" href="{{ route('grape') }}">Cépages</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" aria-current="page" href="{{ route('contact') }}">Contact</a>
@@ -99,6 +97,15 @@
 
         <!-- BEGIN CONTENT REGION !-->
         <div class="flex-shrink-0">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="container">
                 @yield('content')
             </div>

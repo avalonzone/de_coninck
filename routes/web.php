@@ -37,10 +37,12 @@ Route::get('/wine', function () {
     return view('wine', ["wines" => $wines]);
 })->name('wine');
 
+/*
 Route::get('/grape', function () {
     $grapes = Grape::paginate(15);
     return view('grape', ["grapes" => $grapes]);
 })->name('grape');
+*/
 
 Route::get('/contact', function () {
     return view('contact');

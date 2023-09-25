@@ -9,7 +9,7 @@ class MessageController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['store']);
+        $this->middleware('auth')->except(['store', 'create']);
     }
     /**
      * Display a listing of the message.
@@ -26,7 +26,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //Not implemented
+        return view('messages.create');
     }
 
     /**

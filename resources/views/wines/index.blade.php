@@ -36,12 +36,12 @@
                     <td class="align-middle"> {{ $wine->grape->name }}</td>
                     <td class="align-middle"> {{ $wine->type->name }}</td>
                     <td class="align-middle">
-                            <form action="{{ route('wines.destroy', $wine->id )}}" method="POST">
+                            <form action="{{ route('wines.destroy', $wine->id )}}" method="POST" id="deleteWineId">
                                 <a class="btn btn-secondary btn-sm" href="{{ route('wines.show', $wine->id) }}">Voir</a>
                                 <a class="btn btn-secondary btn-sm " href="{{ route('wines.edit', $wine->id) }}">Modifier</a>
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Effacer</button>
+                                <button type="submit" class="btn btn-danger btn-sm" data-toggle="confirmation">Effacer</button>
                             </form>
                     </td>
                     </tr>
