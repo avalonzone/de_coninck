@@ -58,4 +58,33 @@ jQuery(document).ready(function () {
           reader.readAsDataURL(file);
         }
       });
+
+      if( $.fn.dataTable.isDataTable('#winesDatatableId'))
+      {
+         $('#winesDatatableId').DataTable.destroy();
+      }
+      else
+      {
+         winesTable = $('#winesDatatableId').DataTable({
+            ajax : {
+                url : "https://philip.avalon-zone.be/list",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                dataSrc : function(json){
+                    return json
+                },
+                data: {}
+            },
+            responsive: true,
+            autoWidth: false,
+            pageLength: 15,
+            columns: [
+                {data: "name"},
+                {data: "year"},
+                {data: "price"},
+                {data: "grape"},
+                {data: "type"}
+            ]
+            });
+      }
 });

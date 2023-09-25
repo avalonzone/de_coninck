@@ -7,7 +7,7 @@ use App\Models\Grape;
 use App\Http\Controllers\WineController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\UserWineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +30,10 @@ Route::controller(AuthController::class)->group(function() {
     Route::get('login', 'login')->name('login');
     Route::get('logout', 'logout')->name('logout');
     Route::post('authenticate', 'authenticate')->name('authenticate');
+});
+
+Route::controller(UserWineController::class)->group(function(){
+    Route::get('list', 'list')->name('list');
 });
 
 Route::get('/wine', function () {

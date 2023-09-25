@@ -56,7 +56,7 @@
                         <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('wine') ? 'active' : '' }}" aria-current="page" href="{{ route('wine') }}">Vins</a>
+                        <a class="nav-link {{ request()->routeIs('wine') ? 'active' : '' }}" aria-current="page" href="{{ route('wine') }}">Nos classiques</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" aria-current="page" href="{{ route('contact') }}">Contact</a>
