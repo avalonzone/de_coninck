@@ -6,7 +6,7 @@
 <div class="container">
     <div class="card">
         <div class="card-header">
-            Gestion des vins
+            <strong>Gestion des vins</strong>
         </div>
         <div class="card-body">
             <table class="table table-bordered">

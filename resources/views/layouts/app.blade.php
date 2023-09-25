@@ -67,10 +67,13 @@
                         <a class="nav-link dropdown-toggle {{ request()->routeIs('wines.*') || request()->routeIs('messages.*') ? 'active' : '' }}" href="#" data-bs-toggle="dropdown">Administration</a>
                         <ul class="dropdown-menu">
                             <li class="nav-item">
-                                <a class="dropdown-item {{ request()->routeIs('wines.*') ? 'active' : '' }}" aria-current="page" href="{{ route('wines.index') }}">Vins</a>
+                                <a class="dropdown-item" aria-current="page" href="{{ route('wines.create') }}">Ajouter un vin</a>
                             </li>
                             <li class="nav-item">
-                                <a class="dropdown-item {{ request()->routeIs('messages.*') ? 'active' : '' }}" aria-current="page" href="{{ route('messages.index') }}">Messages</a>
+                                <a class="dropdown-item" aria-current="page" href="{{ route('wines.index') }}">Liste des vins</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="dropdown-item" aria-current="page" href="{{ route('messages.index') }}">Liste des messages</a>
                             </li>
                         </ul>
                       </li>

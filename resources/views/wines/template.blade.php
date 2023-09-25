@@ -9,13 +9,15 @@
     @endif
         <div class="card">
             <div class="card-header">
+                <strong>
                 @if (request()->routeIs('wines.edit'))
-                    Modifier : <strong>{{ $wine->name }} ({{ $wine->year }})</strong>
+                    Modifier : {{ $wine->name }} ({{ $wine->year }})
                 @elseif (request()->routeIs('wines.create'))
                     Ajouter un vin :
                 @else
-                    <strong>{{ $wine->name }} ({{ $wine->year }})</strong>
+                    {{ $wine->name }} ({{ $wine->year }})
                 @endif
+                </strong>
             </div>
             <div class="card-body">
                 <div class="row gy-3">
