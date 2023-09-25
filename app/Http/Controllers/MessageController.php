@@ -9,7 +9,7 @@ class MessageController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except([]);
+        $this->middleware('auth')->except(['store']);
     }
     /**
      * Display a listing of the message.
@@ -34,7 +34,18 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //Not implemented
+        $request->validate([
+            'name' => 'required|max:255',
+            'phone' => 'required',
+            'email' => 'required|email',
+            'message' => 'required|max:512',
+        ]);
+
+        Message::create($request->all());
+
+        return redirect()->route('home')
+            ->with('success', 'Message ajouté avec succès!');
+
     }
 
     /**

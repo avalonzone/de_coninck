@@ -17,12 +17,10 @@ return new class extends Migration
             $table->engine = 'InnoDB';
 
             $table->id();
-
             $table->string('name');
             $table->string('email');
             $table->string('phone');
             $table->text('message');
-
             $table->timestamps();
         });
     }
