@@ -18,6 +18,7 @@ class UserSeeder extends Seeder
         $pwd = env('APP_PWD', false);
         $usr = env('APP_USR', false);
 
+        // Admin user
         User::factory()->create([
             'name' => 'Administrator',
             'email' => $usr,

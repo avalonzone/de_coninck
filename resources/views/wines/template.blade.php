@@ -1,6 +1,6 @@
 
     @if(request()->routeIs('wines.edit'))
-    <form action="{{ route('wines.update', $wine->id) }}" method="POST">
+    <form action="{{ route('wines.update', $wine->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
     @endif
@@ -14,11 +14,15 @@
             <div class="card-body">
                 <div class="row gy-3">
                     <div class='col-12'>
-                        <img src="{{ route('home') }}/images/default-wine-150.png" alt="" height="150px"/>
+                        @if ($wine->source !== "default-wine-150.png")
+                            <img src="{{ asset('/storage/images/' . $wine->source) }}" alt="" title="Wine bottle" height="150px"/>
+                        @else
+                            <img src="{{ asset('/images/default-wine-150.png') }}"" alt="" title="Wine bottle" height="150px"/>
+                        @endif
                     </div>
                     @if(request()->routeIs('wines.edit'))
                     <div class='col-12'>
-                        <input type="file" class="form-control" id="inputGroupFileId" aria-describedby="inputGroupFileUploadId" aria-label="Ajouter image">
+                        <input type="file" name="source" class="form-control" id="inputGroupFileId" aria-describedby="inputGroupFileUploadId" aria-label="Ajouter image" value="{{ asset('/storage/images/' . $wine->source) }}">
                     </div>
                     @endif
                     <div class='col-10'>

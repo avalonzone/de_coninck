@@ -9,6 +9,7 @@ use App\Models\Type;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class WineController extends Controller
 {
@@ -86,7 +87,21 @@ class WineController extends Controller
             'description' => 'required',
         ]);
 
-        $wine->update($request->all());
+        $allRequestDatas = $request->all();
+
+        if ($image = $request->file('source'))
+        {
+            $destinationPath = storage_path('app/public/images/');
+            $wineImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $wineImage);
+            $allRequestDatas['source'] = "$wineImage";
+        }
+        else
+        {
+            unset($allRequestDatas['source']);
+        }
+
+        $wine->update($allRequestDatas);
 
         return redirect()->route('wines.index')
                 ->with('success', "Vin mis à jour avec succès!");

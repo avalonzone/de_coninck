@@ -25,9 +25,9 @@
                     <td class="align-middle text-center">
                         @if ($wine->source !== "default-wine-150.png")
                             <!-- To Edit !-->
-                            <img src="storage/{{$wine->source}}" alt="" height="50px"/>
+                            <img src="{{ asset('/storage/images/' . $wine->source) }}" alt="" title="Wine bottle" height="50px"/>
                         @else
-                            <img src="{{ route('home') }}/images/default-wine-150.png" alt="" height="50px"/>
+                            <img src="{{ asset('/images/default-wine-150.png') }}"" alt="" title="Wine bottle" height="50px"/>
                         @endif
                     </td>
                     <td class="align-middle" > {{ $wine->name }} </td>
