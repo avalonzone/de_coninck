@@ -84,6 +84,9 @@
                       <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('logout') ? 'active' : '' }}" aria-current="page" href="{{ route('logout') }}">Déconnexion</a>
                       </li>
+                      <li class="nav-item">
+                        <a class="nav-link" /><strong>{{Auth::user()->email}}</strong></a>
+                      </li>
                       @endguest
                     </ul>
                   </div>
